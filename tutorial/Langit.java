@@ -15,8 +15,6 @@ public class Langit extends World
      */
     public Langit()
     {    
-        // Create a new world with 800x500 cells with a cell size of 1x1 pixels.
-        // super(800, 500, 1, false);
         super(800, 500, 1);
         
         this.inisialisasi();
@@ -25,17 +23,11 @@ public class Langit extends World
     
     public void inisialisasi()
     {
-        // int acak = Greenfoot.getRandomNumber(360);
+        Pesawat hero = new Pesawat();
+        addObject(hero, 100, 250);
         
-        Roket mumbulDewe = new Roket();
-        // mumbulDewe.setRotation(acak);
+        Roket musuh = new Roket();
+        addObject(musuh, 400, 100);
         
-        addObject(mumbulDewe, 100, 250);
-        
-        Roket layang = new Roket();
-        layang.setMaju(2);
-        layang.getImage().scale(60, 30);
-        
-        addObject(layang, 20, 100);
     }
 }
