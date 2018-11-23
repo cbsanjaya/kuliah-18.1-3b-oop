@@ -31,6 +31,20 @@ public class PeluruHero extends Actor
         
         if ( isAtEdge() ) {
             getWorld().removeObject(this);
-        }
-    }    
+        } else {
+            if ( nabrakMusuh() ) {
+                removeMusuh();
+            }
+        }      
+        
+    }
+    
+    public boolean nabrakMusuh() {
+        return isTouching(Roket.class);
+    }
+    
+    public void removeMusuh() {
+        removeTouching(Roket.class);
+        getWorld().removeObject(this);
+    }
 }

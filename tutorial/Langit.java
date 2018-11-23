@@ -8,7 +8,8 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  */
 public class Langit extends World
 {
-
+    int waktuMusuh = 300;
+    
     /**
      * Constructor for objects of class Langit.
      * 
@@ -26,8 +27,25 @@ public class Langit extends World
         Pesawat hero = new Pesawat();
         addObject(hero, 100, 250);
         
-        Roket musuh = new Roket();
-        addObject(musuh, 400, 100);
+        // Roket musuh = new Roket();
+        // addObject(musuh, 400, 100);
+    }
+    
+    public void act()
+    {
+        // waktuMusuh - 1
+        waktuMusuh--;
         
+        if (waktuMusuh <= 0) {
+            int xAcak = Greenfoot.getRandomNumber(800);
+            int yAcak = Greenfoot.getRandomNumber(500);
+            
+            // buat musuh Baru
+            Roket musuh = new Roket();
+            addObject(musuh, xAcak, yAcak);
+            
+            // reset waktu Musuh
+            waktuMusuh = 300;
+        }
     }
 }
